@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container py-5 mt-1 ">
+    <section class=" card-body">
+        <h1 class="display-2 text-center p-4 mt-3"> Bienvenid@ a Notas.Net </h1>
+        <div class=" gap-5 d-flex justify-content-center" >
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/hezrwbzv.json"
+            trigger="loop"
+            colors="primary:#000000,secondary:#16c72e"
+            style="width:150px;height:150px">
+        </lord-icon>
+        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/hursldrn.json"
+            trigger="loop"
+            delay="5000"
+            colors="primary:#000000,secondary:#16c72e"
+            style="width:150px;height:150px">
+        </lord-icon>
+        </div>
+        <h3 class="mb-5 mt-3 lh-lg ms-5 d-flex"> Aqui podrás organizar tus tareas y recordatorios
+            de manera sencilla y eficiente <h5 class="ms-5 mt--2 text-center"> ¡ Comienza a 
+            tomar notas ahora mismo y descubre la comodidad <br> de tener toda tu información al alcance en Notas.Net ! </h5></h3>
+    
+        <div class="text-center mt-5 mb-5">
+            <a href="/signin/" class="btn btn-outline-primary mb-4">
+                Iniciar Sesión
+            </a>
+            <a href="/signup/" class="btn btn-outline-primary mb-4">
+                Registrarse
+            </a>
+        </div>
+
+    </section>
+</main>
+{% endblock %}

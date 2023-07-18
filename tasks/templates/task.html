@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+    <div class="row">
+        <div class="col-md6 offset-md-0.4">
+            <h1 class="text-center mt-4 mb-4 display-4"> Tareas </h1>
+            
+            <ul class="list-group mb-5 pb-5"> 
+                {% for task in tasks %}
+                {% if task.datecompleted %}
+                <a class="list-group-item m-3 border border-success-subtle border-2 rounded-4 " href="{% url 'task_detail' task.id %}">
+                {% else %}
+                <a class="list-group-item m-3 border border-danger-subtle border-2 rounded-4" href="{% url 'task_detail' task.id %}">
+                {% endif %} 
+                        <header class="d-flex justify-content-between">
+                            {% if task.datecompleted %}
+                                <h2 class="fw-bold text-success ">{{task.title}}</h2>
+                            {% else %}
+                                <h4 class="fw-bold text-danger">{{task.title}}</h4>
+                            {% endif %}
+                            <h5>Por {{task.user.username}} </h5>
+                        </header>
+                    
+                        <h6>{{task.description}}</h6>
+                        {% if task.datecompleted %}
+                        <h5 class="float-end"> Completada {{task.datecompleted|date:'M j Y'}}</h5>
+                        {% else %}
+                        <h5 class="float-end"> Incompleta {{task.datecompleted|date:'M j Y'}}</h5>
+                        {% endif %}
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
